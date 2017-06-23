@@ -22,19 +22,27 @@
   "bugs": {
     "url": "https://github.com/aureooms/js-codec-ascii/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aureooms/js-codec": "^1.0.0"
+  },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "babel-cli": "^6.18.0",
-    "babel-polyfill": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
-    "codeclimate-test-reporter": "^0.4.0",
-    "coveralls": "^2.11.14",
-    "esdoc": "^0.4.8",
-    "nyc": "^8.4.0"
+    "ava": "^0.19.1",
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "codeclimate-test-reporter": "^0.5.0",
+    "coveralls": "^2.13.1",
+    "esdoc": "^0.5.2",
+    "nyc": "^11.0.2"
   },
   "homepage": "https://aureooms.github.io/js-codec-ascii",
-  "keywords": ["ascii", "codec", "decode", "encode", "strings"],
+  "keywords": [
+    "ascii",
+    "codec",
+    "decode",
+    "encode",
+    "strings"
+  ],
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "repository": {

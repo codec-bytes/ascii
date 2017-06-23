@@ -1,7 +1,7 @@
 import { char2byte } from './char2byte' ;
 import { ASCIIEncodeError } from './ASCIIEncodeError' ;
 
-export function encode* ( string ) {
+export function* encode ( string ) {
 
 	for ( const chr of string ) {
 

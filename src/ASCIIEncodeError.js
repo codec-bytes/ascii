@@ -1,5 +1,10 @@
-export default function ASCIIEncodeError ( message = '' ) {
+import { EncodeError } from '@aureooms/js-codec' ;
 
-	this.message = message.toString() ;
+export class ASCIIEncodeError extends EncodeError {
+
+	constructor ( reason , object , start , end ) {
+		super( 'ASCII' , reason , object , start , end ) ;
+	}
 
 }
+
