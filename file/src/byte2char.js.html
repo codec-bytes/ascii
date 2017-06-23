@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/byte2char.js | @aureooms/js-codec-ascii API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+<script data-ice="userScript" src="user/script/0-header.js"></script>
+<link data-ice="userStyle" rel="stylesheet" href="user/css/0-style.css">
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a data-ice="repoURL" href="https://github.com/aureooms/js-codec-ascii" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/byte2char.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export const byte2char = [
+	&apos;\0&apos;, //   0  0 NUL
+	&apos;SOH&apos;,
+	&apos;STX&apos;,
+	&apos;ETX&apos;,
+	&apos;EOT&apos;,
+	&apos;ENQ&apos;,
+	&apos;ACK&apos;,
+	&apos;BEL&apos;,
+	&apos;BS&apos;,
+	&apos;\t&apos;, //   9  9 TAB
+	&apos;\n&apos;, //  10  A LF
+	&apos;VT&apos;,
+	&apos;FF&apos;,
+	&apos;\r&apos;, //  13  D CR
+	&apos;SO&apos;,
+	&apos;SI&apos;,
+	&apos;DLE&apos;,
+	&apos;DC1&apos;,
+	&apos;DC2&apos;,
+	&apos;DC3&apos;,
+	&apos;DC4&apos;,
+	&apos;NAK&apos;,
+	&apos;SYN&apos;,
+	&apos;ETB&apos;,
+	&apos;CAN&apos;,
+	&apos;EM&apos;,
+	&apos;SUB&apos;,
+	&apos;ESC&apos;,
+	&apos;FS&apos;,
+	&apos;GS&apos;,
+	&apos;RS&apos;,
+	&apos;US&apos;,
+	&apos; &apos;, //  32 20 Space
+	&apos;!&apos;,
+	&apos;&quot;&apos;,
+	&apos;#&apos;,
+	&apos;$&apos;,
+	&apos;%&apos;,
+	&apos;&amp;&apos;,
+	&apos;\&apos;&apos;,
+	&apos;(&apos;,
+	&apos;)&apos;,
+	&apos;*&apos;,
+	&apos;+&apos;,
+	&apos;,&apos;,
+	&apos;-&apos;,
+	&apos;.&apos;,
+	&apos;/&apos;,
+	&apos;0&apos;,
+	&apos;1&apos;,
+	&apos;2&apos;,
+	&apos;3&apos;,
+	&apos;4&apos;,
+	&apos;5&apos;,
+	&apos;6&apos;,
+	&apos;7&apos;,
+	&apos;8&apos;,
+	&apos;9&apos;,
+	&apos;:&apos;,
+	&apos;;&apos;,
+	&apos;&lt;&apos;,
+	&apos;=&apos;,
+	&apos;&gt;&apos;,
+	&apos;?&apos;,
+	&apos;@&apos;,
+	&apos;A&apos;,
+	&apos;B&apos;,
+	&apos;C&apos;,
+	&apos;D&apos;,
+	&apos;E&apos;,
+	&apos;F&apos;,
+	&apos;G&apos;,
+	&apos;H&apos;,
+	&apos;I&apos;,
+	&apos;J&apos;,
+	&apos;K&apos;,
+	&apos;L&apos;,
+	&apos;M&apos;,
+	&apos;N&apos;,
+	&apos;O&apos;,
+	&apos;P&apos;,
+	&apos;Q&apos;,
+	&apos;R&apos;,
+	&apos;S&apos;,
+	&apos;T&apos;,
+	&apos;U&apos;,
+	&apos;V&apos;,
+	&apos;W&apos;,
+	&apos;X&apos;,
+	&apos;Y&apos;,
+	&apos;Z&apos;,
+	&apos;[&apos;,
+	&apos;\\&apos;,
+	&apos;]&apos;,
+	&apos;^&apos;,
+	&apos;_&apos;,
+	&apos;`&apos;,
+	&apos;a&apos;,
+	&apos;b&apos;,
+	&apos;c&apos;,
+	&apos;d&apos;,
+	&apos;e&apos;,
+	&apos;f&apos;,
+	&apos;g&apos;,
+	&apos;h&apos;,
+	&apos;i&apos;,
+	&apos;j&apos;,
+	&apos;k&apos;,
+	&apos;l&apos;,
+	&apos;m&apos;,
+	&apos;n&apos;,
+	&apos;o&apos;,
+	&apos;p&apos;,
+	&apos;q&apos;,
+	&apos;r&apos;,
+	&apos;s&apos;,
+	&apos;t&apos;,
+	&apos;u&apos;,
+	&apos;v&apos;,
+	&apos;w&apos;,
+	&apos;x&apos;,
+	&apos;y&apos;,
+	&apos;z&apos;,
+	&apos;{&apos;,
+	&apos;|&apos;,
+	&apos;}&apos;,
+	&apos;~&apos;,
+	&apos;&lt;DEL&gt;&apos;,
+] ;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

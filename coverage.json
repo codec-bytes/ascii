@@ -1,0 +1,51 @@
+{
+  "coverage": "0%",
+  "expectCount": 8,
+  "actualCount": 0,
+  "files": {
+    "src/ASCIIDecodeError.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5
+      ]
+    },
+    "src/ASCIIEncodeError.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        5
+      ]
+    },
+    "src/byte2char.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/char2byte.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/decode.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/encode.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    }
+  }
+}
