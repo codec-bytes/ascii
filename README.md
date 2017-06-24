@@ -5,6 +5,13 @@ ASCII encoder/decoder for JavaScript.
 See [docs](https://aureooms.github.io/js-codec-ascii/index.html).
 Parent is [@aureooms/js-codec](https://github.com/aureooms/js-codec).
 
+```js
+> ascii.encode('Hello, world')
+[ 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ]
+> ascii.decode([ 72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ])
+'Hello, world'
+```
+
 [![License](https://img.shields.io/github/license/aureooms/js-codec-ascii.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-codec-ascii/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-codec-ascii.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-codec-ascii)
 [![Build status](https://img.shields.io/travis/aureooms/js-codec-ascii.svg?style=flat)](https://travis-ci.org/aureooms/js-codec-ascii)
