@@ -1,7 +1,7 @@
 import _encode from './_encode' ;
 
-export default function encode ( bytes ) {
+export default function encode ( bytes , options = null ) {
 
-	return [ ..._encode(bytes) ] ;
+	return [ ..._encode(bytes, options) ] ;
 
 }

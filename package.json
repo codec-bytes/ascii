@@ -23,7 +23,7 @@
     "url": "https://github.com/aureooms/js-codec-ascii/issues"
   },
   "dependencies": {
-    "@aureooms/js-codec": "^1.0.0"
+    "@aureooms/js-codec": "^2.0.0"
   },
   "devDependencies": {
     "@aureooms/js-itertools": "^3.3.0",
