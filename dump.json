@@ -155,7 +155,7 @@
     "__docId__": 6,
     "kind": "file",
     "name": "src/_decode.js",
-    "content": "import byte2char from './byte2char' ;\nimport ASCIIDecodeError from './ASCIIDecodeError' ;\n\nexport default function* _decode ( bytes , options = null ) {\n\n\tlet start = 0 ;\n\n\tfor ( const b of bytes ) {\n\n\t\tif ( b < 0x00 || b >= 0x80 ) {\n\t\t\tconst reason = `byte out of range 0x00 <= ${b} <= 0xFF` ;\n\t\t\tconst object = bytes ;\n\t\t\tconst position = { start : start , end : start + 1 } ;\n\t\t\tthrow new ASCIIDecodeError( reason , object , position ) ;\n\t\t}\n\n\t\tyield byte2char[b] ;\n\n\t\t++start ;\n\n\t}\n\n}\n",
+    "content": "import byte2char from './byte2char' ;\nimport ASCIIDecodeError from './ASCIIDecodeError' ;\n\nexport default function* _decode ( bytes , options = null ) {\n\n\tlet start = 0 ;\n\n\tfor ( const b of bytes ) {\n\n\t\tif ( b < 0x00 || b > 0x7F ) {\n\t\t\tconst reason = `byte out of range 0x00 <= ${b} <= 0x7F` ;\n\t\t\tconst object = bytes ;\n\t\t\tconst position = { start : start , end : start + 1 } ;\n\t\t\tthrow new ASCIIDecodeError( reason , object , position ) ;\n\t\t}\n\n\t\tyield byte2char[b] ;\n\n\t\t++start ;\n\n\t}\n\n}\n",
     "static": true,
     "longname": "src/_decode.js",
     "access": null,
