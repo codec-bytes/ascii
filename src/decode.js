@@ -1,14 +1,7 @@
-import { byte2char } from './byte2char' ;
-import { ASCIIDecodeError } from './ASCIIDecodeError' ;
+import _decode from './_decode' ;
 
-export function* decode ( bytes ) {
+export default function decode ( bytes ) {
 
-	for ( const b of bytes ) {
-
-		if ( b < 0x00 || b >= 0x80 ) throw new ASCIIDecodeError( `byte out of range 0x00 <= ${b} <= 0xFF` ) ;
-
-		yield byte2char[b] ;
-
-	}
+	return [ ..._decode(bytes) ].join('') ;
 
 }
