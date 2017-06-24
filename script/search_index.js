@@ -12,10 +12,16 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "@aureooms/js-codec-ascii/src/byte2char.js~byte2char",
-    "variable/index.html#static-variable-byte2char",
-    "<span>byte2char</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/byte2char.js</span>",
-    "variable"
+    "@aureooms/js-codec-ascii/src/_decode.js~_decode",
+    "function/index.html#static-function-_decode",
+    "<span>_decode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/_decode.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-codec-ascii/src/_encode.js~_encode",
+    "function/index.html#static-function-_encode",
+    "<span>_encode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/_encode.js</span>",
+    "function"
   ],
   [
     "@aureooms/js-codec-ascii/src/char2byte.js~char2byte",
@@ -388,6 +394,18 @@ window.esdocSearchIndex = [
     "class/src/ASCIIEncodeError.js~ASCIIEncodeError.html#instance-constructor-constructor",
     "src/ASCIIEncodeError.js~ASCIIEncodeError#constructor",
     "method"
+  ],
+  [
+    "src/_decode.js",
+    "file/src/_decode.js.html",
+    "src/_decode.js",
+    "file"
+  ],
+  [
+    "src/_encode.js",
+    "file/src/_encode.js.html",
+    "src/_encode.js",
+    "file"
   ],
   [
     "src/byte2char.js",

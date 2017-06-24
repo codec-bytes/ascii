@@ -36,27 +36,21 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/encode.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { char2byte } from &apos;./char2byte&apos; ;
-import { ASCIIEncodeError } from &apos;./ASCIIEncodeError&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import _encode from &apos;./_encode&apos; ;
 
-export function* encode ( string ) {
+export default function encode ( bytes , options = null ) {
 
-	for ( const chr of string ) {
-
-		if ( !char2byte.hasOwnProperty(chr) ) throw new ASCIIEncodeError( `cannot find character ${chr}` ) ;
-
-		yield char2byte[chr] ;
-
-	}
+	return [ ..._encode(bytes, options) ] ;
 
 }
 </code></pre>

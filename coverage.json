@@ -1,6 +1,6 @@
 {
   "coverage": "0%",
-  "expectCount": 8,
+  "expectCount": 9,
   "actualCount": 0,
   "files": {
     "src/ASCIIDecodeError.js": {
@@ -19,11 +19,18 @@
         5
       ]
     },
-    "src/byte2char.js": {
+    "src/_decode.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        1
+        4
+      ]
+    },
+    "src/_encode.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
       ]
     },
     "src/char2byte.js": {
@@ -37,14 +44,14 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        3
       ]
     },
     "src/encode.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        3
       ]
     }
   }

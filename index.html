@@ -36,9 +36,10 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
@@ -46,7 +47,13 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-aureooms-js-codec-ascii-https-aureooms-github-io-js-codec-ascii-"><a href="https://aureooms.github.io/js-codec-ascii">@aureooms/js-codec-ascii</a></h1>
 <p>ASCII encoder/decoder for JavaScript.
-See <a href="https://aureooms.github.io/js-codec-ascii/index.html">docs</a>.</p>
+See <a href="https://aureooms.github.io/js-codec-ascii/index.html">docs</a>.
+Parent is <a href="https://github.com/aureooms/js-codec">@aureooms/js-codec</a>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">&gt; ascii.encode(&apos;hello, world&apos;)
+[ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ]
+&gt; ascii.decode([ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ])
+&apos;hello, world&apos;</code>
+</code></pre>
 <p><a href="https://raw.githubusercontent.com/aureooms/js-codec-ascii/master/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-codec-ascii.svg?style=flat" alt="License"></a>
 <a href="https://www.npmjs.org/package/@aureooms/js-codec-ascii"><img src="https://img.shields.io/npm/v/@aureooms/js-codec-ascii.svg?style=flat" alt="NPM version"></a>
 <a href="https://travis-ci.org/aureooms/js-codec-ascii"><img src="https://img.shields.io/travis/aureooms/js-codec-ascii.svg?style=flat" alt="Build status"></a>

@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-codec-ascii",
   "description": "ASCII encoder/decoder for JavaScript",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "aureooms",
   "ava": {
     "require": [
@@ -23,9 +23,10 @@
     "url": "https://github.com/aureooms/js-codec-ascii/issues"
   },
   "dependencies": {
-    "@aureooms/js-codec": "^1.0.0"
+    "@aureooms/js-codec": "^2.0.0"
   },
   "devDependencies": {
+    "@aureooms/js-itertools": "^3.3.0",
     "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
     "babel-polyfill": "^6.23.0",

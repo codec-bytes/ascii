@@ -36,9 +36,10 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
@@ -47,10 +48,10 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/ASCIIEncodeError.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { EncodeError } from &apos;@aureooms/js-codec&apos; ;
 
-export class ASCIIEncodeError extends EncodeError {
+export default class ASCIIEncodeError extends EncodeError {
 
-	constructor ( reason , object , start , end ) {
-		super( &apos;ASCII&apos; , reason , object , start , end ) ;
+	constructor ( reason , object , position ) {
+		super( &apos;ascii&apos; , reason , object , position ) ;
 	}
 
 }

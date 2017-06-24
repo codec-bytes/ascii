@@ -36,27 +36,21 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/decode.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { byte2char } from &apos;./byte2char&apos; ;
-import { ASCIIDecodeError } from &apos;./ASCIIDecodeError&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import _decode from &apos;./_decode&apos; ;
 
-export function* decode ( bytes ) {
+export default function decode ( bytes , options = null ) {
 
-	for ( const b of bytes ) {
-
-		if ( b &lt; 0x00 || b &gt;= 0x80 ) throw new ASCIIDecodeError( `byte out of range 0x00 &lt;= ${b} &lt;= 0xFF` ) ;
-
-		yield byte2char[b] ;
-
-	}
+	return [ ..._decode(bytes, options) ].join(&apos;&apos;) ;
 
 }
 </code></pre>

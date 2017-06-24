@@ -36,21 +36,40 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export * from &apos;./ASCIIDecodeError&apos; ;
-export * from &apos;./ASCIIEncodeError&apos; ;
-export * from &apos;./byte2char&apos; ;
-export * from &apos;./char2byte&apos; ;
-export * from &apos;./decode&apos; ;
-export * from &apos;./encode&apos; ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import ASCIIDecodeError from &apos;./ASCIIDecodeError&apos; ;
+import ASCIIEncodeError from &apos;./ASCIIEncodeError&apos; ;
+import _decode from &apos;./_decode&apos; ;
+import _encode from &apos;./_encode&apos; ;
+import byte2char from &apos;./byte2char&apos; ;
+import char2byte from &apos;./char2byte&apos; ;
+import decode from &apos;./decode&apos; ;
+import encode from &apos;./encode&apos; ;
+
+export default {
+	decode ,
+	encode ,
+} ;
+
+export {
+	ASCIIDecodeError ,
+	ASCIIEncodeError ,
+	_decode ,
+	_encode ,
+	byte2char ,
+	char2byte ,
+	decode ,
+	encode ,
+} ;
 </code></pre>
 
 </div>

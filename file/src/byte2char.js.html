@@ -36,144 +36,145 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIDecodeError.js~ASCIIDecodeError.html">ASCIIDecodeError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/ASCIIEncodeError.js~ASCIIEncodeError.html">ASCIIEncodeError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_decode">_decode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/byte2char.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export const byte2char = [
-	&apos;\0&apos;, //   0  0 NUL
-	&apos;SOH&apos;,
-	&apos;STX&apos;,
-	&apos;ETX&apos;,
-	&apos;EOT&apos;,
-	&apos;ENQ&apos;,
-	&apos;ACK&apos;,
-	&apos;BEL&apos;,
-	&apos;BS&apos;,
-	&apos;\t&apos;, //   9  9 TAB
-	&apos;\n&apos;, //  10  A LF
-	&apos;VT&apos;,
-	&apos;FF&apos;,
-	&apos;\r&apos;, //  13  D CR
-	&apos;SO&apos;,
-	&apos;SI&apos;,
-	&apos;DLE&apos;,
-	&apos;DC1&apos;,
-	&apos;DC2&apos;,
-	&apos;DC3&apos;,
-	&apos;DC4&apos;,
-	&apos;NAK&apos;,
-	&apos;SYN&apos;,
-	&apos;ETB&apos;,
-	&apos;CAN&apos;,
-	&apos;EM&apos;,
-	&apos;SUB&apos;,
-	&apos;ESC&apos;,
-	&apos;FS&apos;,
-	&apos;GS&apos;,
-	&apos;RS&apos;,
-	&apos;US&apos;,
-	&apos; &apos;, //  32 20 Space
-	&apos;!&apos;,
-	&apos;&quot;&apos;,
-	&apos;#&apos;,
-	&apos;$&apos;,
-	&apos;%&apos;,
-	&apos;&amp;&apos;,
-	&apos;\&apos;&apos;,
-	&apos;(&apos;,
-	&apos;)&apos;,
-	&apos;*&apos;,
-	&apos;+&apos;,
-	&apos;,&apos;,
-	&apos;-&apos;,
-	&apos;.&apos;,
-	&apos;/&apos;,
-	&apos;0&apos;,
-	&apos;1&apos;,
-	&apos;2&apos;,
-	&apos;3&apos;,
-	&apos;4&apos;,
-	&apos;5&apos;,
-	&apos;6&apos;,
-	&apos;7&apos;,
-	&apos;8&apos;,
-	&apos;9&apos;,
-	&apos;:&apos;,
-	&apos;;&apos;,
-	&apos;&lt;&apos;,
-	&apos;=&apos;,
-	&apos;&gt;&apos;,
-	&apos;?&apos;,
-	&apos;@&apos;,
-	&apos;A&apos;,
-	&apos;B&apos;,
-	&apos;C&apos;,
-	&apos;D&apos;,
-	&apos;E&apos;,
-	&apos;F&apos;,
-	&apos;G&apos;,
-	&apos;H&apos;,
-	&apos;I&apos;,
-	&apos;J&apos;,
-	&apos;K&apos;,
-	&apos;L&apos;,
-	&apos;M&apos;,
-	&apos;N&apos;,
-	&apos;O&apos;,
-	&apos;P&apos;,
-	&apos;Q&apos;,
-	&apos;R&apos;,
-	&apos;S&apos;,
-	&apos;T&apos;,
-	&apos;U&apos;,
-	&apos;V&apos;,
-	&apos;W&apos;,
-	&apos;X&apos;,
-	&apos;Y&apos;,
-	&apos;Z&apos;,
-	&apos;[&apos;,
-	&apos;\\&apos;,
-	&apos;]&apos;,
-	&apos;^&apos;,
-	&apos;_&apos;,
-	&apos;`&apos;,
-	&apos;a&apos;,
-	&apos;b&apos;,
-	&apos;c&apos;,
-	&apos;d&apos;,
-	&apos;e&apos;,
-	&apos;f&apos;,
-	&apos;g&apos;,
-	&apos;h&apos;,
-	&apos;i&apos;,
-	&apos;j&apos;,
-	&apos;k&apos;,
-	&apos;l&apos;,
-	&apos;m&apos;,
-	&apos;n&apos;,
-	&apos;o&apos;,
-	&apos;p&apos;,
-	&apos;q&apos;,
-	&apos;r&apos;,
-	&apos;s&apos;,
-	&apos;t&apos;,
-	&apos;u&apos;,
-	&apos;v&apos;,
-	&apos;w&apos;,
-	&apos;x&apos;,
-	&apos;y&apos;,
-	&apos;z&apos;,
-	&apos;{&apos;,
-	&apos;|&apos;,
-	&apos;}&apos;,
-	&apos;~&apos;,
-	&apos;&lt;DEL&gt;&apos;,
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export default [
+	  &apos;\0&apos;, //   0 00 NUL
+	&apos;\x01&apos;, //   1 01 SOH
+	&apos;\x02&apos;, //   2 02 STX
+	&apos;\x03&apos;, //   3 03 ETX
+	&apos;\x04&apos;, //   4 04 EOT
+	&apos;\x05&apos;, //   5 05 ENQ
+	&apos;\x06&apos;, //   6 06 ACK
+	&apos;\x07&apos;, //   7 07 BEL
+	&apos;\x08&apos;, //   8 08 BS
+	  &apos;\t&apos;, //   9 09 TAB
+	  &apos;\n&apos;, //  10 0A LF
+	&apos;\x0b&apos;, //  11 0B VT
+	&apos;\x0c&apos;, //  12 0C FF
+	  &apos;\r&apos;, //  13 0D CR
+	&apos;\x0e&apos;, //  14 0E SO
+	&apos;\x0f&apos;, //  15 0F SI
+	&apos;\x10&apos;, //  16 10 DLE
+	&apos;\x11&apos;, //  17 11 DC1
+	&apos;\x12&apos;, //  18 12 DC2
+	&apos;\x13&apos;, //  19 13 DC3
+	&apos;\x14&apos;, //  20 14 DC4
+	&apos;\x15&apos;, //  21 15 NAK
+	&apos;\x16&apos;, //  22 16 SYN
+	&apos;\x17&apos;, //  23 17 ETB
+	&apos;\x18&apos;, //  24 18 CAN
+	&apos;\x19&apos;, //  25 19 EM
+	&apos;\x1a&apos;, //  26 1A SUB
+	&apos;\x1b&apos;, //  27 1B ESC
+	&apos;\x1c&apos;, //  28 1C FS
+	&apos;\x1d&apos;, //  29 1D GS
+	&apos;\x1e&apos;, //  30 1E RS
+	&apos;\x1f&apos;, //  31 1F US
+	   &apos; &apos;, //  32 20 Space
+	   &apos;!&apos;, //  33 21 !
+	   &apos;&quot;&apos;, //  34 22 &quot;
+	   &apos;#&apos;, //  35 23 #
+	   &apos;$&apos;, //  36 24 $
+	   &apos;%&apos;, //  37 25 %
+	   &apos;&amp;&apos;, //  38 26 &amp;
+	  &apos;\&apos;&apos;, //  39 27 &apos;
+	   &apos;(&apos;, //  40 28 (
+	   &apos;)&apos;, //  41 29 )
+	   &apos;*&apos;, //  42 2A *
+	   &apos;+&apos;, //  43 2B +
+	   &apos;,&apos;, //  44 2C ,
+	   &apos;-&apos;, //  45 2D -
+	   &apos;.&apos;, //  46 2E .
+	   &apos;/&apos;, //  47 2F /
+	   &apos;0&apos;, //  48 30 0
+	   &apos;1&apos;, //  49 31 1
+	   &apos;2&apos;, //  50 32 2
+	   &apos;3&apos;, //  51 33 3
+	   &apos;4&apos;, //  52 34 4
+	   &apos;5&apos;, //  53 35 5
+	   &apos;6&apos;, //  54 36 6
+	   &apos;7&apos;, //  55 37 7
+	   &apos;8&apos;, //  56 38 8
+	   &apos;9&apos;, //  57 39 9
+	   &apos;:&apos;, //  58 3A :
+	   &apos;;&apos;, //  59 3B ;
+	   &apos;&lt;&apos;, //  60 3C &lt;
+	   &apos;=&apos;, //  61 3D =
+	   &apos;&gt;&apos;, //  62 3E &gt;
+	   &apos;?&apos;, //  63 3F ?
+	   &apos;@&apos;, //  64 40 @
+	   &apos;A&apos;, //  65 41 A
+	   &apos;B&apos;, //  66 42 B
+	   &apos;C&apos;, //  67 43 C
+	   &apos;D&apos;, //  68 44 D
+	   &apos;E&apos;, //  69 45 E
+	   &apos;F&apos;, //  70 46 F
+	   &apos;G&apos;, //  71 47 G
+	   &apos;H&apos;, //  72 48 H
+	   &apos;I&apos;, //  73 49 I
+	   &apos;J&apos;, //  74 4A J
+	   &apos;K&apos;, //  75 4B K
+	   &apos;L&apos;, //  76 4C L
+	   &apos;M&apos;, //  77 4D M
+	   &apos;N&apos;, //  78 4E N
+	   &apos;O&apos;, //  79 4F O
+	   &apos;P&apos;, //  80 50 P
+	   &apos;Q&apos;, //  81 51 Q
+	   &apos;R&apos;, //  82 52 R
+	   &apos;S&apos;, //  83 53 S
+	   &apos;T&apos;, //  84 54 T
+	   &apos;U&apos;, //  85 55 U
+	   &apos;V&apos;, //  86 56 V
+	   &apos;W&apos;, //  87 57 W
+	   &apos;X&apos;, //  88 58 X
+	   &apos;Y&apos;, //  89 59 Y
+	   &apos;Z&apos;, //  90 5A Z
+	   &apos;[&apos;, //  91 5B [
+	  &apos;\\&apos;, //  92 5C \
+	   &apos;]&apos;, //  93 5D ]
+	   &apos;^&apos;, //  94 5E ^
+	   &apos;_&apos;, //  95 5F _
+	   &apos;`&apos;, //  96 60 `
+	   &apos;a&apos;, //  97 61 a
+	   &apos;b&apos;, //  98 62 b
+	   &apos;c&apos;, //  99 63 c
+	   &apos;d&apos;, // 100 64 d
+	   &apos;e&apos;, // 101 65 e
+	   &apos;f&apos;, // 102 66 f
+	   &apos;g&apos;, // 103 67 g
+	   &apos;h&apos;, // 104 68 h
+	   &apos;i&apos;, // 105 69 i
+	   &apos;j&apos;, // 106 6A j
+	   &apos;k&apos;, // 107 6B k
+	   &apos;l&apos;, // 108 6C l
+	   &apos;m&apos;, // 109 6D m
+	   &apos;n&apos;, // 110 6E n
+	   &apos;o&apos;, // 111 6F o
+	   &apos;p&apos;, // 112 70 p
+	   &apos;q&apos;, // 113 71 q
+	   &apos;r&apos;, // 114 72 r
+	   &apos;s&apos;, // 115 73 s
+	   &apos;t&apos;, // 116 74 t
+	   &apos;u&apos;, // 117 75 u
+	   &apos;v&apos;, // 118 76 v
+	   &apos;w&apos;, // 119 77 w
+	   &apos;x&apos;, // 120 78 x
+	   &apos;y&apos;, // 121 79 y
+	   &apos;z&apos;, // 122 7A z
+	   &apos;{&apos;, // 123 7B {
+	   &apos;|&apos;, // 124 7C |
+	   &apos;}&apos;, // 125 7D }
+	   &apos;~&apos;, // 126 7E ~
+	&apos;\x7f&apos;, // 127 7F DEL
 ] ;
 </code></pre>
 
