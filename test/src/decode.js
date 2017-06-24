@@ -33,5 +33,6 @@ test( success , [ 0x61 ] , null , 'a' ) ;
 
 test( success , [ ...range(0x80) ] , null , byte2char.join('') ) ;
 
+test( failure , [ -1 ] , null , ASCIIDecodeError , { start : 0 , end : 1 } ) ;
 test( failure , [ 0x80 ] , null , ASCIIDecodeError , { start : 0 , end : 1 } ) ;
 test( failure , [ ...range(0x81) ] , null , ASCIIDecodeError , { start : 128 , end : 129 } ) ;
