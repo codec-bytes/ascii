@@ -16,12 +16,13 @@ success.title = ( _ , bytes , options , expected ) => `decode '${bytes}' succeed
 
 function failure ( t , bytes , options , ExpectedError , position ) {
 
-	t.throws( ( ) => decode( bytes ) , CodecError ) ;
-	t.throws( ( ) => decode( bytes ) , ExpectedError ) ;
-	t.throws( ( ) => decode( bytes ) , ( error ) => error.encoding === 'ascii' ) ;
-	t.throws( ( ) => decode( bytes ) , ( error ) => error.object === bytes ) ;
-	t.throws( ( ) => decode( bytes ) , ( error ) => error.position.start === position.start ) ;
-	t.throws( ( ) => decode( bytes ) , ( error ) => error.position.end === position.end ) ;
+	const error = t.throws( ( ) => decode( bytes ) ) ;
+	t.true( error instanceof CodecError ) ;
+	t.true( error instanceof ExpectedError ) ;
+	t.is( error.encoding , 'ascii' ) ;
+	t.is( error.object , bytes ) ;
+	t.is( error.position.start , position.start ) ;
+	t.is( error.position.end , position.end ) ;
 
 }
 

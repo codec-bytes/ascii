@@ -16,12 +16,13 @@ success.title = ( _ , string , options , expected ) => `encode '${JSON.stringify
 
 function failure ( t , string , options , ExpectedError , position ) {
 
-	t.throws( ( ) => encode( string ) , CodecError ) ;
-	t.throws( ( ) => encode( string ) , ExpectedError ) ;
-	t.throws( ( ) => encode( string ) , ( error ) => error.encoding === 'ascii' ) ;
-	t.throws( ( ) => encode( string ) , ( error ) => error.object === string ) ;
-	t.throws( ( ) => encode( string ) , ( error ) => error.position.start === position.start ) ;
-	t.throws( ( ) => encode( string ) , ( error ) => error.position.end === position.end ) ;
+	const error = t.throws( ( ) => encode( string ) ) ;
+	t.true( error instanceof CodecError ) ;
+	t.true( error instanceof ExpectedError ) ;
+	t.is( error.encoding , 'ascii' ) ;
+	t.is( error.object , string ) ;
+	t.is( error.position.start , position.start ) ;
+	t.is( error.position.end , position.end ) ;
 
 }
 
