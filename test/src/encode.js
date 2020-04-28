@@ -12,7 +12,7 @@ function success ( t , string , options , expected ) {
 
 }
 
-success.title = ( _ , string , options , expected ) => `encode '${string}' should succeed` ;
+success.title = ( _ , string , options , expected ) => `encode '${JSON.stringify(string)}' should succeed` ;
 
 function failure ( t , string , options , ExpectedError , position ) {
 
@@ -25,7 +25,7 @@ function failure ( t , string , options , ExpectedError , position ) {
 
 }
 
-failure.title = ( _ , string , options , expected ) => `encode '${string}' should fail` ;
+failure.title = ( _ , string , options , expected ) => `encode '${JSON.stringify(string)}' should fail` ;
 
 
 test( success , 'A' , null , [ 0x41 ] ) ;
