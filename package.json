@@ -76,7 +76,7 @@
     "url": "https://github.com/aureooms/js-codec-ascii/issues"
   },
   "dependencies": {
-    "@aureooms/js-codec": "^3.0.0"
+    "@aureooms/js-codec": "^4.0.0"
   },
   "devDependencies": {
     "@aureooms/js-itertools": "5.0.1",
