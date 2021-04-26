@@ -3,7 +3,7 @@
 
 ASCII encoder/decoder for JavaScript.
 See [docs](https://make-github-pseudonymous-again.github.io/js-codec-ascii/index.html).
-Parent is [@aureooms/js-codec](https://github.com/aureooms/js-codec).
+Parent is [@aureooms/js-codec](https://github.com/make-github-pseudonymous-again/js-codec).
 
 ```js
 > ascii.encode('hello, world')
@@ -12,17 +12,17 @@ Parent is [@aureooms/js-codec](https://github.com/aureooms/js-codec).
 'hello, world'
 ```
 
-[![License](https://img.shields.io/github/license/aureooms/js-codec-ascii.svg)](https://raw.githubusercontent.com/aureooms/js-codec-ascii/main/LICENSE)
+[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-codec-ascii.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-codec-ascii/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-codec-ascii.svg)](https://www.npmjs.org/package/@aureooms/js-codec-ascii)
-[![Build](https://img.shields.io/travis/aureooms/js-codec-ascii/main.svg)](https://travis-ci.org/aureooms/js-codec-ascii/branches)
-[![Dependencies](https://img.shields.io/david/aureooms/js-codec-ascii.svg)](https://david-dm.org/aureooms/js-codec-ascii)
-[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-codec-ascii.svg)](https://david-dm.org/aureooms/js-codec-ascii?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-codec-ascii.svg)](https://github.com/aureooms/js-codec-ascii/issues)
+[![Build](https://img.shields.io/travis/make-github-pseudonymous-again/js-codec-ascii/main.svg)](https://travis-ci.org/make-github-pseudonymous-again/js-codec-ascii/branches)
+[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-codec-ascii.svg)](https://david-dm.org/make-github-pseudonymous-again/js-codec-ascii)
+[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-codec-ascii.svg)](https://david-dm.org/make-github-pseudonymous-again/js-codec-ascii?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-codec-ascii.svg)](https://github.com/make-github-pseudonymous-again/js-codec-ascii/issues)
 [![Downloads](https://img.shields.io/npm/dm/@aureooms/js-codec-ascii.svg)](https://www.npmjs.org/package/@aureooms/js-codec-ascii)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-codec-ascii/main.svg)](https://codecov.io/gh/aureooms/js-codec-ascii)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/trends/technical_debt)
+[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-codec-ascii.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-codec-ascii/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-codec-ascii.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-codec-ascii/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-codec-ascii/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-codec-ascii)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-codec-ascii.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-codec-ascii/trends/technical_debt)
 [![Documentation](https://make-github-pseudonymous-again.github.io/js-codec-ascii/badge.svg)](https://make-github-pseudonymous-again.github.io/js-codec-ascii/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-codec-ascii)](https://bundlephobia.com/result?p=@aureooms/js-codec-ascii)

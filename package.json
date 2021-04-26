@@ -73,7 +73,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-codec-ascii/issues"
+    "url": "https://github.com/make-github-pseudonymous-again/js-codec-ascii/issues"
   },
   "dependencies": {
     "@aureooms/js-codec": "^4.0.0"
@@ -113,7 +113,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-codec-ascii"
+    "url": "https://github.com/make-github-pseudonymous-again/js-codec-ascii"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
