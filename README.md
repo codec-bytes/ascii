@@ -15,7 +15,7 @@ Parent is [@codec-bytes/about](https://github.com/codec-bytes/about).
 
 [![License](https://img.shields.io/github/license/codec-bytes/ascii.svg)](https://raw.githubusercontent.com/codec-bytes/ascii/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)
-[![Build](https://img.shields.io/travis/codec-bytes/ascii/main.svg)](https://travis-ci.com/codec-bytes/ascii/branches)
+[![Tests](https://img.shields.io/github/workflow/status/codec-bytes/ascii/ci:test?event=push&label=tests)](https://github.com/codec-bytes/ascii/actions/workflows/ci:test.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/issues)
 [![Downloads](https://img.shields.io/npm/dm/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)
