@@ -3,7 +3,7 @@ import { range } from '@iterable-iterator/range' ;
 
 import { CodecError } from './_fixtures.js' ;
 
-import { encode , ASCIIEncodeError , byte2char } from '../../src' ;
+import { encode , ASCIIEncodeError , byte2char } from '../../src/index.js' ;
 
 function success ( t , string , options , expected ) {
 

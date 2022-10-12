@@ -1,11 +1,11 @@
-import ASCIIDecodeError from './ASCIIDecodeError' ;
-import ASCIIEncodeError from './ASCIIEncodeError' ;
-import _decode from './_decode' ;
-import _encode from './_encode' ;
-import byte2char from './byte2char' ;
-import char2byte from './char2byte' ;
-import decode from './decode' ;
-import encode from './encode' ;
+import ASCIIDecodeError from './ASCIIDecodeError.js' ;
+import ASCIIEncodeError from './ASCIIEncodeError.js' ;
+import _decode from './_decode.js' ;
+import _encode from './_encode.js' ;
+import byte2char from './byte2char.js' ;
+import char2byte from './char2byte.js' ;
+import decode from './decode.js' ;
+import encode from './encode.js' ;
 
 export {
 	ASCIIDecodeError ,

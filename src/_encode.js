@@ -1,5 +1,5 @@
-import char2byte from './char2byte' ;
-import ASCIIEncodeError from './ASCIIEncodeError' ;
+import char2byte from './char2byte.js' ;
+import ASCIIEncodeError from './ASCIIEncodeError.js' ;
 
 export default function* _encode ( string , options = null ) {
 
