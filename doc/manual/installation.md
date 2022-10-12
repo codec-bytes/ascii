@@ -6,10 +6,10 @@ or [npm](https://github.com/npm/npm).
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-codec-ascii
+jspm install npm:@codec-bytes/ascii
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-codec-ascii --save
+npm install @codec-bytes/ascii --save
 ```

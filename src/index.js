@@ -7,11 +7,6 @@ import char2byte from './char2byte' ;
 import decode from './decode' ;
 import encode from './encode' ;
 
-export default {
-	decode ,
-	encode ,
-} ;
-
 export {
 	ASCIIDecodeError ,
 	ASCIIEncodeError ,
@@ -22,3 +17,5 @@ export {
 	decode ,
 	encode ,
 } ;
+
+export {CodecError} from '@codec-bytes/error';

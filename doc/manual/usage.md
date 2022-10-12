@@ -10,7 +10,7 @@ import 'regenerator-runtime/runtime' ;
 
 Then
 ```js
-const codecascii = require( '@aureooms/js-codec-ascii' ) ;
+const codecascii = require( '@codec-bytes/ascii' ) ;
 // or
-import * as codecascii from '@aureooms/js-codec-ascii' ;
+import * as codecascii from '@codec-bytes/ascii' ;
 ```
