@@ -1,7 +1,7 @@
 import test from 'ava';
 import {range} from '@iterable-iterator/range';
 
-import {decode, ASCIIDecodeError, byte2char} from '../../src/index.js';
+import {decode, ASCIIDecodeError, byte2char} from '#module';
 import {CodecError} from './_fixtures.js';
 
 function success(t, bytes, options, expected) {
