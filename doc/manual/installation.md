@@ -1,15 +1,22 @@
 # Installation
 
 Can be managed using
-[jspm](http://jspm.io)
-or [npm](https://github.com/npm/npm).
+[yarn](https://yarnpkg.com/en/docs),
+[npm](https://docs.npmjs.com),
+or [jspm](https://jspm.org/docs).
 
-### jspm
+
+### yarn
 ```terminal
-jspm install npm:@codec-bytes/ascii
+yarn add @codec-bytes/ascii
 ```
 
 ### npm
 ```terminal
 npm install @codec-bytes/ascii --save
+```
+
+### jspm
+```terminal
+jspm install npm:@codec-bytes/ascii
 ```

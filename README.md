@@ -7,9 +7,10 @@ See [docs](https://codec-bytes.github.io/ascii/index.html).
 Parent is [@codec-bytes/about](https://github.com/codec-bytes/about).
 
 ```js
-> ascii.encode('hello, world')
-[ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ]
-> ascii.decode([ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ])
+> import {encode, decode} from '@codec-bytes/ascii'
+> encode('hello, world');
+[104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]
+> decode([104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]);
 'hello, world'
 ```
 
