@@ -7,11 +7,9 @@ See [docs](https://codec-bytes.github.io/ascii/index.html).
 Parent is [@codec-bytes/about](https://github.com/codec-bytes/about).
 
 ```js
-> import {encode, decode} from '@codec-bytes/ascii'
-> encode('hello, world');
-[104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]
-> decode([104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]);
-'hello, world'
+import {encode, decode} from '@codec-bytes/ascii'
+encode('hello, world'); // [104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]
+decode([104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]); // 'hello, world'
 ```
 
 [![License](https://img.shields.io/github/license/codec-bytes/ascii.svg)](https://raw.githubusercontent.com/codec-bytes/ascii/main/LICENSE)
