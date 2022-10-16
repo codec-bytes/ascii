@@ -999,10 +999,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@codec-bytes/error@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@codec-bytes/error/-/error-5.0.0.tgz#5cb7b76b2880b2127e89d9f2b9e5e7eaa5b4c009"
-  integrity sha512-gjW4qezRNm99xGrJQdcPSMuYzuz7am/8+HI75V6osBudtO6gpH62bQC7ERGDTQDhS6se8opX+hxf3iGVLVcmsA==
+"@codec-bytes/error@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@codec-bytes/error/-/error-5.0.1.tgz#20dac5f0724d4a14a47cb207d8752f12b4c28c14"
+  integrity sha512-+CIn20TUlwsoiStlhCBfXqiBhDsU5TxGNhW5fhBj5xqs9B+O4pT1y83n+7gu4x+Y9U+3Ceyc/BtfxCjAlPxVAw==
   dependencies:
     "@failure-abstraction/error" "^6.0.1"
 

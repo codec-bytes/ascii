@@ -69,7 +69,7 @@
     "test:src": "IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd"
   },
   "dependencies": {
-    "@codec-bytes/error": "^5.0.0"
+    "@codec-bytes/error": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.19.3",
