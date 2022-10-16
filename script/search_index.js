@@ -1,44 +1,50 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-codec-ascii/src/asciidecodeerror.js~asciidecodeerror",
+    "@codec-bytes/ascii/src/asciidecodeerror.js~asciidecodeerror",
     "class/src/ASCIIDecodeError.js~ASCIIDecodeError.html",
-    "<span>ASCIIDecodeError</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/ASCIIDecodeError.js</span>",
+    "<span>ASCIIDecodeError</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/ASCIIDecodeError.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-codec-ascii/src/asciiencodeerror.js~asciiencodeerror",
+    "@codec-bytes/ascii/src/asciiencodeerror.js~asciiencodeerror",
     "class/src/ASCIIEncodeError.js~ASCIIEncodeError.html",
-    "<span>ASCIIEncodeError</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/ASCIIEncodeError.js</span>",
+    "<span>ASCIIEncodeError</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/ASCIIEncodeError.js</span>",
     "class"
   ],
   [
-    "@aureooms/js-codec-ascii/src/_decode.js~_decode",
+    "@codec-bytes/ascii/src/_decode.js~_decode",
     "function/index.html#static-function-_decode",
-    "<span>_decode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/_decode.js</span>",
+    "<span>_decode</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/_decode.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-codec-ascii/src/_encode.js~_encode",
+    "@codec-bytes/ascii/src/_encode.js~_encode",
     "function/index.html#static-function-_encode",
-    "<span>_encode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/_encode.js</span>",
+    "<span>_encode</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/_encode.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-codec-ascii/src/char2byte.js~char2byte",
-    "variable/index.html#static-variable-char2byte",
-    "<span>char2byte</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/char2byte.js</span>",
+    "@codec-bytes/ascii/src/byte2char.js~byte2char",
+    "variable/index.html#static-variable-byte2char",
+    "<span>byte2char</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/byte2char.js</span>",
     "variable"
   ],
   [
-    "@aureooms/js-codec-ascii/src/decode.js~decode",
+    "@codec-bytes/ascii/src/char2byte.js~char2byte",
+    "variable/index.html#static-variable-char2byte",
+    "<span>char2byte</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/char2byte.js</span>",
+    "variable"
+  ],
+  [
+    "@codec-bytes/ascii/src/decode.js~decode",
     "function/index.html#static-function-decode",
-    "<span>decode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/decode.js</span>",
+    "<span>decode</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/decode.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-codec-ascii/src/encode.js~encode",
+    "@codec-bytes/ascii/src/encode.js~encode",
     "function/index.html#static-function-encode",
-    "<span>encode</span> <span class=\"search-result-import-path\">@aureooms/js-codec-ascii/src/encode.js</span>",
+    "<span>encode</span> <span class=\"search-result-import-path\">@codec-bytes/ascii/src/encode.js</span>",
     "function"
   ],
   [

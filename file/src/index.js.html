@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/index.js | @aureooms/js-codec-ascii</title>
+  <title data-ice="title">src/index.js | @codec-bytes/ascii</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="ASCII encoder/decoder for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-codec-ascii"><meta property="twitter:description" content="ASCII encoder/decoder for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="ASCII encoder/decoder for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@codec-bytes/ascii"><meta property="twitter:description" content="ASCII encoder/decoder for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-codec-ascii"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/codec-bytes/ascii"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -35,36 +35,22 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_encode">_encode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-decode">decode</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-encode">encode</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-byte2char">byte2char</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-char2byte">char2byte</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import ASCIIDecodeError from &apos;./ASCIIDecodeError&apos; ;
-import ASCIIEncodeError from &apos;./ASCIIEncodeError&apos; ;
-import _decode from &apos;./_decode&apos; ;
-import _encode from &apos;./_encode&apos; ;
-import byte2char from &apos;./byte2char&apos; ;
-import char2byte from &apos;./char2byte&apos; ;
-import decode from &apos;./decode&apos; ;
-import encode from &apos;./encode&apos; ;
-
-export default {
-	decode ,
-	encode ,
-} ;
-
-export {
-	ASCIIDecodeError ,
-	ASCIIEncodeError ,
-	_decode ,
-	_encode ,
-	byte2char ,
-	char2byte ,
-	decode ,
-	encode ,
-} ;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export {CodecError} from &apos;@codec-bytes/error&apos;;
+export {default as ASCIIDecodeError} from &apos;./ASCIIDecodeError.js&apos;;
+export {default as _decode} from &apos;./_decode.js&apos;;
+export {default as ASCIIEncodeError} from &apos;./ASCIIEncodeError.js&apos;;
+export {default as byte2char} from &apos;./byte2char.js&apos;;
+export {default as _encode} from &apos;./_encode.js&apos;;
+export {default as decode} from &apos;./decode.js&apos;;
+export {default as char2byte} from &apos;./char2byte.js&apos;;
+export {default as encode} from &apos;./encode.js&apos;;
 </code></pre>
 
 </div>

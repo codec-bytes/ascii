@@ -567,9 +567,9 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/ASCIIDecodeError.js",
-    "content": "import { DecodeError } from '@aureooms/js-codec' ;\n\nexport default class ASCIIDecodeError extends DecodeError {\n\n\tconstructor ( reason , object , position ) {\n\t\tsuper( 'ascii' , reason , object , position ) ;\n\t}\n\n}\n",
+    "content": "import {DecodeError} from '@codec-bytes/error';\n\nexport default class ASCIIDecodeError extends DecodeError {\n\tconstructor(reason, object, position) {\n\t\tsuper('ascii', reason, object, position);\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/ASCIIDecodeError.js",
+    "longname": "/home/runner/work/ascii/ascii/src/ASCIIDecodeError.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -583,14 +583,14 @@
     "longname": "src/ASCIIDecodeError.js~ASCIIDecodeError",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/ASCIIDecodeError.js",
+    "importPath": "@codec-bytes/ascii/src/ASCIIDecodeError.js",
     "importStyle": "ASCIIDecodeError",
     "description": null,
     "lineNumber": 3,
     "undocument": true,
     "interface": false,
     "extends": [
-      "@aureooms/js-codec~DecodeError"
+      "@codec-bytes/error~DecodeError"
     ]
   },
   {
@@ -604,16 +604,16 @@
     "longname": "src/ASCIIDecodeError.js~ASCIIDecodeError#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 4,
     "undocument": true
   },
   {
     "__docId__": 51,
     "kind": "file",
     "name": "src/ASCIIEncodeError.js",
-    "content": "import { EncodeError } from '@aureooms/js-codec' ;\n\nexport default class ASCIIEncodeError extends EncodeError {\n\n\tconstructor ( reason , object , position ) {\n\t\tsuper( 'ascii' , reason , object , position ) ;\n\t}\n\n}\n\n",
+    "content": "import {EncodeError} from '@codec-bytes/error';\n\nexport default class ASCIIEncodeError extends EncodeError {\n\tconstructor(reason, object, position) {\n\t\tsuper('ascii', reason, object, position);\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/ASCIIEncodeError.js",
+    "longname": "/home/runner/work/ascii/ascii/src/ASCIIEncodeError.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -627,14 +627,14 @@
     "longname": "src/ASCIIEncodeError.js~ASCIIEncodeError",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/ASCIIEncodeError.js",
+    "importPath": "@codec-bytes/ascii/src/ASCIIEncodeError.js",
     "importStyle": "ASCIIEncodeError",
     "description": null,
     "lineNumber": 3,
     "undocument": true,
     "interface": false,
     "extends": [
-      "@aureooms/js-codec~EncodeError"
+      "@codec-bytes/error~EncodeError"
     ]
   },
   {
@@ -648,16 +648,16 @@
     "longname": "src/ASCIIEncodeError.js~ASCIIEncodeError#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 4,
     "undocument": true
   },
   {
     "__docId__": 54,
     "kind": "file",
     "name": "src/_decode.js",
-    "content": "import byte2char from './byte2char' ;\nimport ASCIIDecodeError from './ASCIIDecodeError' ;\n\nexport default function* _decode ( bytes , options = null ) {\n\n\tlet start = 0 ;\n\n\tfor ( const b of bytes ) {\n\n\t\tif ( b < 0x00 || b > 0x7F ) {\n\t\t\tconst reason = `byte out of range 0x00 <= ${b} <= 0x7F` ;\n\t\t\tconst object = bytes ;\n\t\t\tconst position = { start : start , end : start + 1 } ;\n\t\t\tthrow new ASCIIDecodeError( reason , object , position ) ;\n\t\t}\n\n\t\tyield byte2char[b] ;\n\n\t\t++start ;\n\n\t}\n\n}\n",
+    "content": "import byte2char from './byte2char.js';\nimport ASCIIDecodeError from './ASCIIDecodeError.js';\n\nexport default function* _decode(bytes, _options = null) {\n\tlet start = 0;\n\n\tfor (const b of bytes) {\n\t\tif (b < 0x00 || b > 0x7f) {\n\t\t\tconst reason = `byte out of range 0x00 <= ${b} <= 0x7F`;\n\t\t\tconst object = bytes;\n\t\t\tconst position = {start, end: start + 1};\n\t\t\tthrow new ASCIIDecodeError(reason, object, position);\n\t\t}\n\n\t\tyield byte2char[b];\n\n\t\t++start;\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/_decode.js",
+    "longname": "/home/runner/work/ascii/ascii/src/_decode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -673,7 +673,7 @@
     "longname": "src/_decode.js~_decode",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/_decode.js",
+    "importPath": "@codec-bytes/ascii/src/_decode.js",
     "importStyle": "_decode",
     "description": null,
     "lineNumber": 4,
@@ -686,7 +686,7 @@
         ]
       },
       {
-        "name": "options",
+        "name": "_options",
         "optional": true,
         "types": [
           "undefined"
@@ -700,9 +700,9 @@
     "__docId__": 56,
     "kind": "file",
     "name": "src/_encode.js",
-    "content": "import char2byte from './char2byte' ;\nimport ASCIIEncodeError from './ASCIIEncodeError' ;\n\nexport default function* _encode ( string , options = null ) {\n\n\tlet start = 0 ;\n\n\tfor ( const chr of string ) {\n\n\t\tif ( !char2byte.hasOwnProperty(chr) ) {\n\t\t\tconst reason = `cannot find character ${chr}` ;\n\t\t\tconst object = string ;\n\t\t\tconst position = { start : start , end : start + 1 } ;\n \t\t\tthrow new ASCIIEncodeError( reason , object , position ) ;\n\t\t}\n\n\t\tyield char2byte[chr] ;\n\n\t\t++start ;\n\n\t}\n\n}\n",
+    "content": "import char2byte from './char2byte.js';\nimport ASCIIEncodeError from './ASCIIEncodeError.js';\n\nexport default function* _encode(string, _options = null) {\n\tlet start = 0;\n\n\tfor (const chr of string) {\n\t\tif (!Object.prototype.hasOwnProperty.call(char2byte, chr)) {\n\t\t\tconst reason = `cannot find character ${chr}`;\n\t\t\tconst object = string;\n\t\t\tconst position = {start, end: start + 1};\n\t\t\tthrow new ASCIIEncodeError(reason, object, position);\n\t\t}\n\n\t\tyield char2byte[chr];\n\n\t\t++start;\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/_encode.js",
+    "longname": "/home/runner/work/ascii/ascii/src/_encode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -718,7 +718,7 @@
     "longname": "src/_encode.js~_encode",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/_encode.js",
+    "importPath": "@codec-bytes/ascii/src/_encode.js",
     "importStyle": "_encode",
     "description": null,
     "lineNumber": 4,
@@ -731,7 +731,7 @@
         ]
       },
       {
-        "name": "options",
+        "name": "_options",
         "optional": true,
         "types": [
           "undefined"
@@ -745,26 +745,46 @@
     "__docId__": 58,
     "kind": "file",
     "name": "src/byte2char.js",
-    "content": "export default [\n\t  '\\0', //   0 00 NUL\n\t'\\x01', //   1 01 SOH\n\t'\\x02', //   2 02 STX\n\t'\\x03', //   3 03 ETX\n\t'\\x04', //   4 04 EOT\n\t'\\x05', //   5 05 ENQ\n\t'\\x06', //   6 06 ACK\n\t'\\x07', //   7 07 BEL\n\t'\\x08', //   8 08 BS\n\t  '\\t', //   9 09 TAB\n\t  '\\n', //  10 0A LF\n\t'\\x0b', //  11 0B VT\n\t'\\x0c', //  12 0C FF\n\t  '\\r', //  13 0D CR\n\t'\\x0e', //  14 0E SO\n\t'\\x0f', //  15 0F SI\n\t'\\x10', //  16 10 DLE\n\t'\\x11', //  17 11 DC1\n\t'\\x12', //  18 12 DC2\n\t'\\x13', //  19 13 DC3\n\t'\\x14', //  20 14 DC4\n\t'\\x15', //  21 15 NAK\n\t'\\x16', //  22 16 SYN\n\t'\\x17', //  23 17 ETB\n\t'\\x18', //  24 18 CAN\n\t'\\x19', //  25 19 EM\n\t'\\x1a', //  26 1A SUB\n\t'\\x1b', //  27 1B ESC\n\t'\\x1c', //  28 1C FS\n\t'\\x1d', //  29 1D GS\n\t'\\x1e', //  30 1E RS\n\t'\\x1f', //  31 1F US\n\t   ' ', //  32 20 Space\n\t   '!', //  33 21 !\n\t   '\"', //  34 22 \"\n\t   '#', //  35 23 #\n\t   '$', //  36 24 $\n\t   '%', //  37 25 %\n\t   '&', //  38 26 &\n\t  '\\'', //  39 27 '\n\t   '(', //  40 28 (\n\t   ')', //  41 29 )\n\t   '*', //  42 2A *\n\t   '+', //  43 2B +\n\t   ',', //  44 2C ,\n\t   '-', //  45 2D -\n\t   '.', //  46 2E .\n\t   '/', //  47 2F /\n\t   '0', //  48 30 0\n\t   '1', //  49 31 1\n\t   '2', //  50 32 2\n\t   '3', //  51 33 3\n\t   '4', //  52 34 4\n\t   '5', //  53 35 5\n\t   '6', //  54 36 6\n\t   '7', //  55 37 7\n\t   '8', //  56 38 8\n\t   '9', //  57 39 9\n\t   ':', //  58 3A :\n\t   ';', //  59 3B ;\n\t   '<', //  60 3C <\n\t   '=', //  61 3D =\n\t   '>', //  62 3E >\n\t   '?', //  63 3F ?\n\t   '@', //  64 40 @\n\t   'A', //  65 41 A\n\t   'B', //  66 42 B\n\t   'C', //  67 43 C\n\t   'D', //  68 44 D\n\t   'E', //  69 45 E\n\t   'F', //  70 46 F\n\t   'G', //  71 47 G\n\t   'H', //  72 48 H\n\t   'I', //  73 49 I\n\t   'J', //  74 4A J\n\t   'K', //  75 4B K\n\t   'L', //  76 4C L\n\t   'M', //  77 4D M\n\t   'N', //  78 4E N\n\t   'O', //  79 4F O\n\t   'P', //  80 50 P\n\t   'Q', //  81 51 Q\n\t   'R', //  82 52 R\n\t   'S', //  83 53 S\n\t   'T', //  84 54 T\n\t   'U', //  85 55 U\n\t   'V', //  86 56 V\n\t   'W', //  87 57 W\n\t   'X', //  88 58 X\n\t   'Y', //  89 59 Y\n\t   'Z', //  90 5A Z\n\t   '[', //  91 5B [\n\t  '\\\\', //  92 5C \\\n\t   ']', //  93 5D ]\n\t   '^', //  94 5E ^\n\t   '_', //  95 5F _\n\t   '`', //  96 60 `\n\t   'a', //  97 61 a\n\t   'b', //  98 62 b\n\t   'c', //  99 63 c\n\t   'd', // 100 64 d\n\t   'e', // 101 65 e\n\t   'f', // 102 66 f\n\t   'g', // 103 67 g\n\t   'h', // 104 68 h\n\t   'i', // 105 69 i\n\t   'j', // 106 6A j\n\t   'k', // 107 6B k\n\t   'l', // 108 6C l\n\t   'm', // 109 6D m\n\t   'n', // 110 6E n\n\t   'o', // 111 6F o\n\t   'p', // 112 70 p\n\t   'q', // 113 71 q\n\t   'r', // 114 72 r\n\t   's', // 115 73 s\n\t   't', // 116 74 t\n\t   'u', // 117 75 u\n\t   'v', // 118 76 v\n\t   'w', // 119 77 w\n\t   'x', // 120 78 x\n\t   'y', // 121 79 y\n\t   'z', // 122 7A z\n\t   '{', // 123 7B {\n\t   '|', // 124 7C |\n\t   '}', // 125 7D }\n\t   '~', // 126 7E ~\n\t'\\x7f', // 127 7F DEL\n] ;\n",
+    "content": "const byte2char = [\n\t'\\0', //   0 00 NUL\n\t'\\u0001', //   1 01 SOH\n\t'\\u0002', //   2 02 STX\n\t'\\u0003', //   3 03 ETX\n\t'\\u0004', //   4 04 EOT\n\t'\\u0005', //   5 05 ENQ\n\t'\\u0006', //   6 06 ACK\n\t'\\u0007', //   7 07 BEL\n\t'\\u0008', //   8 08 BS\n\t'\\t', //   9 09 TAB\n\t'\\n', //  10 0A LF\n\t'\\u000B', //  11 0B VT\n\t'\\u000C', //  12 0C FF\n\t'\\r', //  13 0D CR\n\t'\\u000E', //  14 0E SO\n\t'\\u000F', //  15 0F SI\n\t'\\u0010', //  16 10 DLE\n\t'\\u0011', //  17 11 DC1\n\t'\\u0012', //  18 12 DC2\n\t'\\u0013', //  19 13 DC3\n\t'\\u0014', //  20 14 DC4\n\t'\\u0015', //  21 15 NAK\n\t'\\u0016', //  22 16 SYN\n\t'\\u0017', //  23 17 ETB\n\t'\\u0018', //  24 18 CAN\n\t'\\u0019', //  25 19 EM\n\t'\\u001A', //  26 1A SUB\n\t'\\u001B', //  27 1B ESC\n\t'\\u001C', //  28 1C FS\n\t'\\u001D', //  29 1D GS\n\t'\\u001E', //  30 1E RS\n\t'\\u001F', //  31 1F US\n\t' ', //  32 20 Space\n\t'!', //  33 21 !\n\t'\"', //  34 22 \"\n\t'#', //  35 23 #\n\t'$', //  36 24 $\n\t'%', //  37 25 %\n\t'&', //  38 26 &\n\t\"'\", //  39 27 '\n\t'(', //  40 28 (\n\t')', //  41 29 )\n\t'*', //  42 2A *\n\t'+', //  43 2B +\n\t',', //  44 2C ,\n\t'-', //  45 2D -\n\t'.', //  46 2E .\n\t'/', //  47 2F /\n\t'0', //  48 30 0\n\t'1', //  49 31 1\n\t'2', //  50 32 2\n\t'3', //  51 33 3\n\t'4', //  52 34 4\n\t'5', //  53 35 5\n\t'6', //  54 36 6\n\t'7', //  55 37 7\n\t'8', //  56 38 8\n\t'9', //  57 39 9\n\t':', //  58 3A :\n\t';', //  59 3B ;\n\t'<', //  60 3C <\n\t'=', //  61 3D =\n\t'>', //  62 3E >\n\t'?', //  63 3F ?\n\t'@', //  64 40 @\n\t'A', //  65 41 A\n\t'B', //  66 42 B\n\t'C', //  67 43 C\n\t'D', //  68 44 D\n\t'E', //  69 45 E\n\t'F', //  70 46 F\n\t'G', //  71 47 G\n\t'H', //  72 48 H\n\t'I', //  73 49 I\n\t'J', //  74 4A J\n\t'K', //  75 4B K\n\t'L', //  76 4C L\n\t'M', //  77 4D M\n\t'N', //  78 4E N\n\t'O', //  79 4F O\n\t'P', //  80 50 P\n\t'Q', //  81 51 Q\n\t'R', //  82 52 R\n\t'S', //  83 53 S\n\t'T', //  84 54 T\n\t'U', //  85 55 U\n\t'V', //  86 56 V\n\t'W', //  87 57 W\n\t'X', //  88 58 X\n\t'Y', //  89 59 Y\n\t'Z', //  90 5A Z\n\t'[', //  91 5B [\n\t'\\\\', //  92 5C \\\n\t']', //  93 5D ]\n\t'^', //  94 5E ^\n\t'_', //  95 5F _\n\t'`', //  96 60 `\n\t'a', //  97 61 a\n\t'b', //  98 62 b\n\t'c', //  99 63 c\n\t'd', // 100 64 d\n\t'e', // 101 65 e\n\t'f', // 102 66 f\n\t'g', // 103 67 g\n\t'h', // 104 68 h\n\t'i', // 105 69 i\n\t'j', // 106 6A j\n\t'k', // 107 6B k\n\t'l', // 108 6C l\n\t'm', // 109 6D m\n\t'n', // 110 6E n\n\t'o', // 111 6F o\n\t'p', // 112 70 p\n\t'q', // 113 71 q\n\t'r', // 114 72 r\n\t's', // 115 73 s\n\t't', // 116 74 t\n\t'u', // 117 75 u\n\t'v', // 118 76 v\n\t'w', // 119 77 w\n\t'x', // 120 78 x\n\t'y', // 121 79 y\n\t'z', // 122 7A z\n\t'{', // 123 7B {\n\t'|', // 124 7C |\n\t'}', // 125 7D }\n\t'~', // 126 7E ~\n\t'\\u007F', // 127 7F DEL\n];\n\nexport default byte2char;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/byte2char.js",
+    "longname": "/home/runner/work/ascii/ascii/src/byte2char.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 59,
+    "kind": "variable",
+    "name": "byte2char",
+    "memberof": "src/byte2char.js",
+    "static": true,
+    "longname": "src/byte2char.js~byte2char",
+    "access": "public",
+    "export": true,
+    "importPath": "@codec-bytes/ascii/src/byte2char.js",
+    "importStyle": "byte2char",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
     "kind": "file",
     "name": "src/char2byte.js",
-    "content": "import byte2char from './byte2char' ;\n\nconst char2byte = { } ;\nfor ( let i = 0x00 ; i < 0x80 ; ++i ) char2byte[byte2char[i]] = i ;\n\nexport default char2byte ;\n",
+    "content": "import byte2char from './byte2char.js';\n\nconst char2byte = {};\nfor (let i = 0x00; i < 0x80; ++i) char2byte[byte2char[i]] = i;\n\nexport default char2byte;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/char2byte.js",
+    "longname": "/home/runner/work/ascii/ascii/src/char2byte.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "variable",
     "name": "char2byte",
     "memberof": "src/char2byte.js",
@@ -772,7 +792,7 @@
     "longname": "src/char2byte.js~char2byte",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/char2byte.js",
+    "importPath": "@codec-bytes/ascii/src/char2byte.js",
     "importStyle": "char2byte",
     "description": null,
     "lineNumber": 3,
@@ -784,18 +804,18 @@
     }
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "file",
     "name": "src/decode.js",
-    "content": "import _decode from './_decode' ;\n\nexport default function decode ( bytes , options = null ) {\n\n\treturn [ ..._decode(bytes, options) ].join('') ;\n\n}\n",
+    "content": "import _decode from './_decode.js';\n\nexport default function decode(bytes, options = null) {\n\treturn [..._decode(bytes, options)].join('');\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/decode.js",
+    "longname": "/home/runner/work/ascii/ascii/src/decode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "function",
     "name": "decode",
     "memberof": "src/decode.js",
@@ -805,7 +825,7 @@
     "longname": "src/decode.js~decode",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/decode.js",
+    "importPath": "@codec-bytes/ascii/src/decode.js",
     "importStyle": "decode",
     "description": null,
     "lineNumber": 3,
@@ -833,18 +853,18 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "file",
     "name": "src/encode.js",
-    "content": "import _encode from './_encode' ;\n\nexport default function encode ( bytes , options = null ) {\n\n\treturn [ ..._encode(bytes, options) ] ;\n\n}\n",
+    "content": "import _encode from './_encode.js';\n\nexport default function encode(bytes, options = null) {\n\treturn [..._encode(bytes, options)];\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/encode.js",
+    "longname": "/home/runner/work/ascii/ascii/src/encode.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "function",
     "name": "encode",
     "memberof": "src/encode.js",
@@ -854,7 +874,7 @@
     "longname": "src/encode.js~encode",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-codec-ascii/src/encode.js",
+    "importPath": "@codec-bytes/ascii/src/encode.js",
     "importStyle": "encode",
     "description": null,
     "lineNumber": 3,
@@ -882,28 +902,28 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import ASCIIDecodeError from './ASCIIDecodeError' ;\nimport ASCIIEncodeError from './ASCIIEncodeError' ;\nimport _decode from './_decode' ;\nimport _encode from './_encode' ;\nimport byte2char from './byte2char' ;\nimport char2byte from './char2byte' ;\nimport decode from './decode' ;\nimport encode from './encode' ;\n\nexport default {\n\tdecode ,\n\tencode ,\n} ;\n\nexport {\n\tASCIIDecodeError ,\n\tASCIIEncodeError ,\n\t_decode ,\n\t_encode ,\n\tbyte2char ,\n\tchar2byte ,\n\tdecode ,\n\tencode ,\n} ;\n",
+    "content": "export {CodecError} from '@codec-bytes/error';\nexport {default as ASCIIDecodeError} from './ASCIIDecodeError.js';\nexport {default as _decode} from './_decode.js';\nexport {default as ASCIIEncodeError} from './ASCIIEncodeError.js';\nexport {default as byte2char} from './byte2char.js';\nexport {default as _encode} from './_encode.js';\nexport {default as decode} from './decode.js';\nexport {default as char2byte} from './char2byte.js';\nexport {default as encode} from './encode.js';\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/src/index.js",
+    "longname": "/home/runner/work/ascii/ascii/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "kind": "index",
-    "content": "[@aureooms/js-codec-ascii](https://aureooms.github.io/js-codec-ascii)\n==\n\nASCII encoder/decoder for JavaScript.\nSee [docs](https://aureooms.github.io/js-codec-ascii/index.html).\nParent is [@aureooms/js-codec](https://github.com/aureooms/js-codec).\n\n```js\n> ascii.encode('hello, world')\n[ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ]\n> ascii.decode([ 104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100 ])\n'hello, world'\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-codec-ascii.svg)](https://raw.githubusercontent.com/aureooms/js-codec-ascii/master/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-codec-ascii.svg)](https://www.npmjs.org/package/@aureooms/js-codec-ascii)\n[![Build](https://img.shields.io/travis/aureooms/js-codec-ascii/master.svg)](https://travis-ci.org/aureooms/js-codec-ascii/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-codec-ascii.svg)](https://david-dm.org/aureooms/js-codec-ascii)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-codec-ascii.svg)](https://david-dm.org/aureooms/js-codec-ascii?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-codec-ascii.svg)](https://github.com/aureooms/js-codec-ascii/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-codec-ascii.svg)](https://www.npmjs.org/package/@aureooms/js-codec-ascii)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-codec-ascii/master.svg)](https://codecov.io/gh/aureooms/js-codec-ascii)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-codec-ascii.svg)](https://codeclimate.com/github/aureooms/js-codec-ascii/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-codec-ascii/badge.svg)](https://aureooms.github.io/js-codec-ascii/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-codec-ascii)](https://bundlephobia.com/result?p=@aureooms/js-codec-ascii)\n",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/README.md",
+    "content": ":fax:\n[@codec-bytes/ascii](https://codec-bytes.github.io/ascii)\n==\n\nASCII encoder/decoder for JavaScript.\nSee [docs](https://codec-bytes.github.io/ascii/index.html).\nParent is [@codec-bytes/about](https://github.com/codec-bytes/about).\n\n```js\nimport {encode, decode} from '@codec-bytes/ascii'\nencode('hello, world'); // [104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]\ndecode([104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]); // 'hello, world'\n```\n\n[![License](https://img.shields.io/github/license/codec-bytes/ascii.svg)](https://raw.githubusercontent.com/codec-bytes/ascii/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)\n[![Tests](https://img.shields.io/github/workflow/status/codec-bytes/ascii/ci?event=push&label=tests)](https://github.com/codec-bytes/ascii/actions/workflows/ci.yml?query=branch:main)\n[![Dependencies](https://img.shields.io/librariesio/github/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/network/dependencies)\n[![GitHub issues](https://img.shields.io/github/issues/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/issues)\n[![Downloads](https://img.shields.io/npm/dm/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/codec-bytes/ascii.svg)](https://codeclimate.com/github/codec-bytes/ascii/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/codec-bytes/ascii.svg)](https://codeclimate.com/github/codec-bytes/ascii/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/codec-bytes/ascii/main.svg)](https://codecov.io/gh/codec-bytes/ascii)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/codec-bytes/ascii.svg)](https://codeclimate.com/github/codec-bytes/ascii/trends/technical_debt)\n[![Documentation](https://codec-bytes.github.io/ascii/badge.svg)](https://codec-bytes.github.io/ascii/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@codec-bytes/ascii)](https://bundlephobia.com/result?p=@codec-bytes/ascii)\n",
+    "longname": "/home/runner/work/ascii/ascii/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-codec-ascii\",\n  \"description\": \"ASCII encoder/decoder for JavaScript\",\n  \"version\": \"2.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"require\": [\n      \"@babel/polyfill\",\n      \"@babel/register\"\n    ],\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"development\": {\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-codec-ascii/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-codec\": \"^3.0.0\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-itertools\": \"3.4.0\",\n    \"@babel/cli\": \"7.8.4\",\n    \"@babel/core\": \"7.9.0\",\n    \"@babel/polyfill\": \"7.8.7\",\n    \"@babel/preset-env\": \"7.9.5\",\n    \"@babel/register\": \"7.9.0\",\n    \"ava\": \"3.8.1\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"6.2.3\",\n    \"nyc\": \"15.0.1\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-codec-ascii\",\n  \"keywords\": [\n    \"ascii\",\n    \"codec\",\n    \"decode\",\n    \"encode\",\n    \"strings\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-codec-ascii\"\n  },\n  \"scripts\": {\n    \"build\": \"rm -rf lib && babel src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"esdoc\": \"esdoc\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\"\n  }\n}\n",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/package.json",
+    "content": "{\n  \"name\": \"@codec-bytes/ascii\",\n  \"description\": \"ASCII encoder/decoder for JavaScript\",\n  \"version\": \"3.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"make-github-pseudonymous-again\",\n  \"homepage\": \"https://codec-bytes.github.io/ascii\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/codec-bytes/ascii\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/codec-bytes/ascii/issues\"\n  },\n  \"keywords\": [\n    \"ascii\",\n    \"codec\",\n    \"decode\",\n    \"encode\",\n    \"strings\"\n  ],\n  \"sideEffects\": false,\n  \"type\": \"module\",\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.cjs\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.cjs\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"publishConfig\": {\n    \"access\": \"public\"\n  },\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-config-and-fix && npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"npm run test:src\",\n    \"test-cmd\": \"NODE_LOADER_CONFIG=test/loader/config.js ava\",\n    \"test:cjs\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.json npm run test-cmd\",\n    \"test:dist\": \"npm run test:modern && npm run test:module && npm run test:cjs\",\n    \"test:modern\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.modern.json npm run test-cmd\",\n    \"test:module\": \"IMPORT_MAP_PATH=test/import-maps/dist/index.module.json npm run test-cmd\",\n    \"test:src\": \"IMPORT_MAP_PATH=test/import-maps/src/index.json npm run test-cmd\"\n  },\n  \"dependencies\": {\n    \"@codec-bytes/error\": \"^5.0.1\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"7.19.3\",\n    \"@babel/plugin-transform-destructuring\": \"7.19.4\",\n    \"@babel/plugin-transform-for-of\": \"7.18.8\",\n    \"@babel/preset-env\": \"7.19.4\",\n    \"@commitlint/cli\": \"17.1.2\",\n    \"@iterable-iterator/range\": \"2.1.0\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"@node-loader/babel\": \"2.0.1\",\n    \"@node-loader/core\": \"2.0.0\",\n    \"@node-loader/import-maps\": \"1.1.0\",\n    \"ava\": \"4.3.3\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.2.0\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.12.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"8.0.1\",\n    \"lint-staged\": \"13.0.3\",\n    \"microbundle\": \"0.15.1\",\n    \"np\": \"7.6.2\",\n    \"pinst\": \"3.0.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.10\",\n    \"xo\": \"0.52.4\"\n  },\n  \"ava\": {\n    \"require\": [\n      \"regenerator-runtime/runtime\"\n    ],\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"timeout\": \"1m\",\n    \"nodeArguments\": [\n      \"--experimental-loader=@node-loader/core\"\n    ]\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"@babel/plugin-transform-destructuring\",\n          \"@babel/plugin-transform-for-of\",\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"camelcase\": \"off\",\n      \"unicorn/prevent-abbreviations\": \"off\",\n      \"no-constant-condition\": \"off\",\n      \"unicorn/prefer-node-protocol\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\",\n      \"unicorn/no-new-array\": \"off\",\n      \"no-negated-condition\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "longname": "/home/runner/work/ascii/ascii/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -918,7 +938,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/doc/manual/overview.md",
+    "longname": "/home/runner/work/ascii/ascii/doc/manual/overview.md",
     "name": "./doc/manual/overview.md",
     "content": "# Overview\n",
     "static": true,
@@ -926,25 +946,25 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/doc/manual/installation.md",
+    "longname": "/home/runner/work/ascii/ascii/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
-    "content": "# Installation\n\nCan be managed using\n[jspm](http://jspm.io)\nor [npm](https://github.com/npm/npm).\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-codec-ascii\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-codec-ascii --save\n```\n",
+    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @codec-bytes/ascii\n```\n\n### npm\n```terminal\nnpm install @codec-bytes/ascii --save\n```\n\n### jspm\n```terminal\njspm install npm:@codec-bytes/ascii\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/doc/manual/usage.md",
+    "longname": "/home/runner/work/ascii/ascii/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
-    "content": "# Usage\n\nThe code needs a ES2015+ polyfill to work, for example\n[@babel/polyfill](https://babeljs.io/docs/usage/polyfill).\n```js\nrequire( '@babel/polyfill' ) ;\n// or\nimport '@babel/polyfill' ;\n```\n\nThen\n```js\nconst codecascii = require( '@aureooms/js-codec-ascii' ) ;\n// or\nimport * as codecascii from '@aureooms/js-codec-ascii' ;\n```\n",
+    "content": "# Usage\n\n> :warning: Depending on your environment, the code may require\n> `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\nFirst, require the polyfill at the entry point of your application\n```js\nawait import('regenerator-runtime/runtime.js');\n// or\nimport 'regenerator-runtime/runtime.js';\n```\n\nThen, import the library where needed\n```js\nconst {encode, decode} = await import('@codec-bytes/ascii');\n// or\nimport {encode, decode} from '@codec-bytes/ascii';\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/js-codec-ascii/doc/manual/example.md",
+    "longname": "/home/runner/work/ascii/ascii/doc/manual/example.md",
     "name": "./doc/manual/example.md",
-    "content": "# Example\n",
+    "content": "# Examples\n\n> More examples in [the test files](https://github.com/codec-bytes/ascii/tree/main/test/src).\n",
     "static": true,
     "access": "public"
   }
