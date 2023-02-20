@@ -72,9 +72,9 @@
     "@codec-bytes/error": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.20.12",
+    "@babel/core": "7.21.0",
     "@babel/plugin-transform-destructuring": "7.20.7",
-    "@babel/plugin-transform-for-of": "7.18.8",
+    "@babel/plugin-transform-for-of": "7.21.0",
     "@babel/preset-env": "7.20.2",
     "@commitlint/cli": "17.4.4",
     "@iterable-iterator/range": "2.1.0",
