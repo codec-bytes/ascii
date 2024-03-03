@@ -14,7 +14,7 @@ decode([104, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100]); // 'hello, w
 
 [![License](https://img.shields.io/github/license/codec-bytes/ascii.svg)](https://raw.githubusercontent.com/codec-bytes/ascii/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)
-[![Tests](https://img.shields.io/github/workflow/status/codec-bytes/ascii/ci?event=push&label=tests)](https://github.com/codec-bytes/ascii/actions/workflows/ci.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/actions/workflow/status/codec-bytes/ascii/ci.yml?branch=main&event=push&label=tests)](https://github.com/codec-bytes/ascii/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/codec-bytes/ascii.svg)](https://github.com/codec-bytes/ascii/issues)
 [![Downloads](https://img.shields.io/npm/dm/@codec-bytes/ascii.svg)](https://www.npmjs.org/package/@codec-bytes/ascii)
