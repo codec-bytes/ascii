@@ -1,5 +1,5 @@
-import byte2char from './byte2char.js';
 import ASCIIDecodeError from './ASCIIDecodeError.js';
+import byte2char from './byte2char.js';
 
 export default function* _decode(bytes, _options = null) {
 	let start = 0;
