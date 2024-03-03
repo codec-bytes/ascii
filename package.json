@@ -102,16 +102,16 @@
     "xo": "0.53.1"
   },
   "ava": {
-    "require": [
-      "regenerator-runtime/runtime"
-    ],
     "files": [
       "test/src/**/*"
     ],
-    "timeout": "1m",
     "nodeArguments": [
       "--experimental-loader=@node-loader/core"
-    ]
+    ],
+    "require": [
+      "regenerator-runtime/runtime"
+    ],
+    "timeout": "1m"
   },
   "babel": {
     "sourceMaps": true,
